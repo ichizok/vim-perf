@@ -1,5 +1,5 @@
 #include <dlfcn.h>
-#include <google/profiler.h>
+#include <gperftools/profiler.h>
 
 #define UNUSED __attribute__((unused))
 
