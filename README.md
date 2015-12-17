@@ -4,7 +4,7 @@ You can use gperftools via Vim script in order to profile Vim.
 
 ## Requirements
 
-* [gperftools](https://code.google.com/p/gperftools/)
+* [gperftools](https://github.com/gperftools/gperftools)
 * Vim; built with `WE_ARE_PROFILING` macro
 
 ## Build Vim
