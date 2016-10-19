@@ -1,7 +1,7 @@
 # for Mac.
 
-TARGET=autoload/vimperf.so
-SRC=autoload/perf.c
+TARGET=lib/vimperf.so
+SRC=src/perf.c
 ARCHS=
 CPPFLAGS=-I/usr/local/include
 CFLAGS=-O2 -W -Wall -Wno-unused -Wno-unused-parameter -bundle -fPIC $(foreach ARCH,$(ARCHS),-arch $(ARCH))

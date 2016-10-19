@@ -1,4 +1,9 @@
-let s:vimperf_dllpath = expand('<sfile>:p:r') . '.so'
+let s:vimperf_dllpath = expand('<sfile>:p:h:h') . '/lib/vimperf.so'
+
+if !filereadable(s:vimperf_dllpath)
+  echoerr 'You must build vimperf.so'
+  finish
+endif
 
 function! s:libcall(func, ...)
   let result = libcall(s:vimperf_dllpath, a:func, get(a:000, 0, ''))
