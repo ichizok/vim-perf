@@ -7,6 +7,10 @@ You can use gperftools via Vim script in order to profile Vim.
 * [gperftools](https://github.com/gperftools/gperftools)
 * Vim; built with `WE_ARE_PROFILING` macro
 
+If you'd like to use heap profiler, you have to link libtcmalloc to Vim before starting.
+
+On Linux, you can use `LD_PRELOAD`.
+
 ## Build Vim
 
 Set `-DWE_ARE_PROFILING` to `CPPFLAGS`.
@@ -33,8 +37,11 @@ set rtp+=/path/to/vim-perf
 " load vim-perf library 
 call vimperf#setup()
 
-" start profiling
+" start cpu profiling
 call vimperf#start("/path/to/result.out")
+
+" or heap profiling
+call vimperf#start("/path/to/result", "heap")
 
 " ... profiling area ...
 
