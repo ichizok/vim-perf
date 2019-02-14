@@ -7,10 +7,6 @@ You can use gperftools via Vim script in order to profile Vim.
 * [gperftools](https://github.com/gperftools/gperftools)
 * Vim; built with `WE_ARE_PROFILING` macro
 
-If you'd like to use heap profiler, you have to link libtcmalloc to Vim before starting.
-
-On Linux, you can use `LD_PRELOAD`.
-
 ## Build Vim
 
 Set `-DWE_ARE_PROFILING` to `CPPFLAGS`.
@@ -52,3 +48,16 @@ call vimperf#stop()
 call vimperf#finish()
 ```
 
+**NOTE** If you'd like to use heap profiler, you have to link libtcmalloc to Vim before starting.
+
+Linux: `LD_PRELOAD`
+
+```
+$ LD_PRELOAD=/path/to/libtcmalloc.so vim ...
+```
+
+macOS: `DYLD_INSERT_LIBRARIES`
+
+```
+$ DYLD_INSERT_LIBRARIES=/path/to/libtcmalloc.dylib vim ...
+```
